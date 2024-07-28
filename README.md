@@ -28,3 +28,25 @@ The script includes two main functions:
 ### Running the Script
 
 Open PowerShell as an Administrator and run the following script:
+
+# Driver Information Retrieval Script
+
+This repository contains a PowerShell script to retrieve and display detailed information about installed drivers on a Windows system. The script allows you to format, filter, group, and export driver details.
+
+## Usage
+
+### Prerequisites
+
+- A Windows machine
+- PowerShell
+
+### Script Overview
+
+The script performs the following tasks:
+1. Retrieves all installed drivers using `Get-WmiObject`.
+2. Selects and formats driver properties for detailed display.
+3. Provides examples of filtering drivers by manufacturer, grouping by driver version, and exporting details to a CSV file.
+
+### Running the Script
+
+Open PowerShell and run the following script:
