@@ -1,22 +1,30 @@
-Incompatible Driver Removal Script
-This repository contains a PowerShell script designed to identify and forcefully remove specific incompatible drivers from a Windows system. This script is particularly useful for resolving issues with memory protection and enabling secure boot features.
+# Driver Removal Script
 
-Prerequisites
-PowerShell 5.1 or later
-Administrator privileges (Run PowerShell as Administrator)
-Drivers Targeted
-The script targets the following drivers:
-lvbflt64.sys (Logitech)
-lvrs64.sys (Logitech)
-lvuvc64.sys (Logitech)
-NewTek_WDM_KS.sys (NewTek Partners LLP)
-wdcsam64.sys (Western Digital Technologies)
-wdcsam64_prewin8.sys (Western Digital Technologies)
-Script Description
-The script performs the following steps:
+This repository contains a PowerShell script to find and remove specific drivers from a Windows system. The script searches for specified driver files and attempts to remove them forcefully.
 
-Identify Incompatible Drivers: Uses Get-WmiObject and Get-PnpDevice to locate installed drivers matching the specified file names.
-Disable and Stop Services: Attempts to disable and stop services associated with the identified drivers.
-Remove Driver Services: Uses sc.exe to delete the service entries.
-Uninstall Drivers: Uses pnputil to forcefully uninstall the driver packages.
-Remove Driver Entries: Uses WMI to remove driver entries from the system.
+## Target Drivers
+
+The script targets the following driver files:
+- `lvbflt64.sys`
+- `lvrs64.sys`
+- `lvuvc64.sys`
+- `NewTek_WDM_KS.sys`
+- `wdcsam64.sys`
+- `wdcsam64_prewin8.sys`
+
+## Usage
+
+### Prerequisites
+
+- A Windows machine
+- Administrator privileges to remove drivers
+
+### Script Overview
+
+The script includes two main functions:
+1. `Find-Drivers`: Searches for the specified drivers using `Get-PnpDevice` and `Get-WmiObject`.
+2. `Remove-Drivers`: Removes the found drivers using `pnputil` and `sc.exe`.
+
+### Running the Script
+
+Open PowerShell as an Administrator and run the following script:
